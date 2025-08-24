@@ -45,7 +45,7 @@ function Projects() {
               transition={{ duration: 0.6, delay: index * 0.3 + 0.2 }}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-md">
+              <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md">
                 {index + 1}
               </div>
               <div className="hidden md:block w-1 h-full bg-blue-300 mt-2 md:mt-4"></div>
@@ -60,7 +60,7 @@ function Projects() {
               viewport={{ once: false, amount: 0.2 }}
             >
               <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition break-words">
-                <h3 className="text-xl font-bold text-blue-600 break-words">{project.title}</h3>
+                <h3 className="text-xl font-bold text-indigo-600 break-words">{project.title}</h3>
                 <p className="text-gray-600 break-words">{formatDate(project.date)}</p>
                 <p className="mt-2 text-gray-500 break-words">{project.description}</p>
                 {project.link && project.link !== "#" && (

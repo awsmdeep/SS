@@ -29,7 +29,7 @@ function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className={`mb-16 flex flex-col md:flex-row items-start w-full relative ${
+            className={`mb-16 flex flex-col md:flex-row items-start w-full relative break-words ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             initial={{ opacity: 0, y: 40 }}
@@ -39,7 +39,7 @@ function Projects() {
           >
             {/* Step Number / Icon */}
             <motion.div
-              className="absolute left-0 md:relative flex flex-col items-center md:mx-4 mb-4 md:mb-0"
+              className="relative flex flex-col items-center mb-4 md:mb-0"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.3 + 0.2 }}
@@ -48,22 +48,21 @@ function Projects() {
               <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-md">
                 {index + 1}
               </div>
-              {/* Connector line for md+ screens */}
               <div className="hidden md:block w-1 h-full bg-blue-300 mt-2 md:mt-4"></div>
             </motion.div>
 
             {/* Card */}
             <motion.div
-              className="w-full md:w-1/2 px-0 md:px-4 mt-6 md:mt-0"
+              className="w-full md:w-1/2 px-0 md:px-4 mt-4 md:mt-0 break-words"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.3 + 0.3 }}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                <h3 className="text-xl font-bold text-blue-600">{project.title}</h3>
-                <p className="text-gray-600">{formatDate(project.date)}</p>
-                <p className="mt-2 text-gray-500">{project.description}</p>
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition break-words">
+                <h3 className="text-xl font-bold text-blue-600 break-words">{project.title}</h3>
+                <p className="text-gray-600 break-words">{formatDate(project.date)}</p>
+                <p className="mt-2 text-gray-500 break-words">{project.description}</p>
                 {project.link && project.link !== "#" && (
                   <Button
                     href={project.link}
